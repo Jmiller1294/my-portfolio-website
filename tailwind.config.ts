@@ -9,10 +9,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#02182C",
+      },
+      backgroundImage: {
+        "hero-pattern": "url('/hero.png')",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 } satisfies Config;

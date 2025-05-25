@@ -6,7 +6,7 @@ interface ProjectsProps {
  
 const Projects: FunctionComponent<ProjectsProps> = () => {
     return ( 
-        <div className="h-auto w-full flex flex-col items-center justify-center p-4">
+        <div className="h-svh w-full flex flex-col items-center p-4 grey text-black">
             <h1 className="text-3xl font-bold">Projects</h1>
             <div className="bg-black h-1 w-10 m-2">&nbsp;</div>
             <p>

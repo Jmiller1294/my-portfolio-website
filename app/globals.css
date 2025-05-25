@@ -19,4 +19,157 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   color: #fff;
+  box-sizing: border-box;
+}
+
+.fullscreen {
+  background: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  perspective: 1200px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.rolling-box {
+  width: 100vw;
+  height: 100vh;
+  transform-origin: top;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  overflow: hidden;
+}
+
+.rolling-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/hero.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.rolling-box-content {
+  display: flex;
+  height: 100%;
+  overflow-y: auto;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  transform: rotateX(0deg); /* neutral */
+  transition: transform 5s ease-in-out scale(0.5);
+}
+
+.box{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  transform-origin: center;
+  transform-style: preserve-3d;
+}
+
+.box-content {
+  height: 100vh;
+  width: 100%;
+  transform: rotateX(-180deg); /* Counter-rotation to make text upright */
+  backface-visibility: hidden; /* Prevent showing flipped text backside */
+  overflow-y: scroll;
+}
+
+.animate .rolling-box {
+   animation: flip-rolling-box 2s ease-in-out forwards;
+}
+
+.animate .box{
+ animation: flip-box 2s ease-in-out forwards;
+}
+
+.reverse-animate .rolling-box{
+  animation: flip-rolling-box-backwards 2s ease-in-out backwards;
+}
+
+.reverse-animate .box{
+ animation: flip-box-backwards 2s ease-in-out backwards;
+}
+
+@keyframes flip-box {
+  0% {
+    transform: rotateX(0deg) scale(1);
+  }
+  50% {
+    transform: rotateX(120deg) scale(0.7);
+  }
+  100% {
+    transform: rotateX(180deg) scale(1);
+  }
+}
+
+@keyframes flip-rolling-box {
+  0% {
+    transform: rotateX(0deg) translateY(0) scale(1);
+  }
+  50% {
+
+    transform: rotateX(45deg) translateY(-25%) scale(0.7);
+  }
+  100% {
+    transform: rotateX(100deg) translateY(0) scale(0.7);
+  }
+}
+
+@keyframes flip-rolling-box-backwards {
+  0% {
+    transform: rotateX(100deg) translateY(0) scale(0.7);
+  }
+  50% {
+
+    transform: rotateX(45deg) translateY(-25%) scale(0.7);
+  }
+  100% {
+    transform: rotateX(0deg) translateY(0) scale(1);
+  }
+}
+
+@keyframes flip-box-backwards {
+  0% {
+    transform: rotateX(180deg) scale(1);
+  }
+  50% {
+    transform: rotateX(120deg) scale(0.7);
+  }
+  100% {
+    transform: rotateX(0deg) scale(1);
+  }
+}
+
+.grey{
+  background: #efeee5;
+}
+.rolling-box.fade-in-bg::before {
+  animation: fadeInBg 2s ease-in-out forwards;
+}
+
+@keyframes fadeInBg {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1; /* Or 1, or any final value */
+  }
 }

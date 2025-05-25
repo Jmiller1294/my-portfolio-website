@@ -6,7 +6,7 @@ interface TimelineProps {
  
 const Timeline: FunctionComponent<TimelineProps> = () => {
     return ( 
-        <div className="h-auto w-full flex flex-col items-center justify-center p-4">
+        <div className="h-svh w-full flex flex-col items-center p-4">
             <h1 className="text-3xl font-bold">Timeline</h1>
             <div className="bg-black h-1 w-10 m-2">&nbsp;</div>
             <p>

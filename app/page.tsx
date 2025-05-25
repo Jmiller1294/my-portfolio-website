@@ -1,42 +1,89 @@
+"use client";
 import Link from "next/link";
 import Biography from "./components/Biography";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Timeline from "./components/Timeline";
 import Contact from "./components/Contact";
+import { useEffect, useState } from "react";
+import Content from "./components/Content";
+import GamifiedResume from "./components/gamified-resume";
 
 export default function Home() {
+  const [animationType, setAnimationType] = useState<string>("");
+  const [initialRender, setInitialrender] = useState<boolean>(true);
+
+  const triggerRoll = (animation: string) => {
+      
+      triggerRoll();
+    }
+    else{
+      triggerRoll();
+    }
+  };
+
+  const getAnimation = () => {
+    if(animationType === 'forwards') {
+      return "animate";
+    }
+    else if(animationType === 'backwards') {
+      return "reverse-animate";
+    }
+    else {
+      return "";
+    }
+  }
+
   return (
-    <div className="bg-slate-900 h-auto w-full font-[family-name:var(--font-geist-sans)]">
-      <nav className="flex h-auto w-full bg-slate-900 p-4">
+    <div className="h-auto w-full relative font-[family-name:var(--font-geist-sans)]">
+      <nav className="flex flex-row h-auto w-full items-center text-white absolute top-0 z-50 p-6">
         <div>
-          <h1 className="font-extrabold">Justin Miller</h1>
+          <h1 className="font-extrabold text-slate-200 text-2xl relative left-0">
+            Justin Miller
+          </h1>
         </div>
-        <div className="flex flex-row gap-4 ">
-          <Link href="/about" className="text-sm hover:text-gray-700">About</Link>
-          <Link href="/skills" className="text-sm hover:text-gray-700">Skills</Link>
-          <Link href="/projects" className="text-sm hover:text-gray-700">Projects</Link>
-          <Link href="/blog" className="text-sm  hover:text-gray-700">Blog</Link>
-          <Link href="/contact" className="text-sm  hover:text-gray-700">Contact</Link>
+        <div className="flex flex-row gap-4 ml-auto">
+          <Link
+            href="/about"
+            className="text-md text-slate-200 font-bold uppercase"
+          >
+            About
+          </Link>
+          <Link
+            href="/skills"
+            className="text-md text-slate-200 hover:text-white font-bold uppercase"
+          >
+            Skills
+          </Link>
+          <Link
+            href="/projects"
+            className="text-md text-slate-200 hover:text-white font-bold uppercase"
+          >
+            Projects
+          </Link>
+          <Link
+            href="/blog"
+            className="text-md  text-slate-200 hover:text-white font-bold uppercase"
+          >
+            Blog
+          </Link>
+          <Link
+            href="/contact"
+            className="text-md text-slate-200 hover:text-white font-bold uppercase"
+          >
+            Contact
+          </Link>
         </div>
       </nav>
       <main className="flex flex-col h-auto w-full">
-        <Biography />
-        <Skills />
-        <Timeline />
-        <Projects />
-        <Contact />
+        <div
+          className={`fullscreen ${getAnimation()
+          }`}
+        >
+          <Biography triggerRoll={triggerRoll} />
+          <Content triggerRoll={triggerRoll} />
+        </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <div className="flex flex-col items-center justify-center">
-          <p className="text-sm text-gray-500">© 2023 Your Name</p>
-          <p className="text-sm text-gray-500">All rights reserved.</p>
-        </div>
-        <div className="flex gap-4">
-          <Link href="/privacy" className="text-sm text-gray-500 hover:text-gray-700">Privacy Policy</Link>
-          <Link href="/terms" className="text-sm text-gray-500 hover:text-gray-700">Terms of Service</Link>
-        </div>
-      </footer>
     </div>
   );
 }
