@@ -1,28 +1,12 @@
-// pages/about.tsx
 import React from "react";
-import Head from "next/head";
 
 export default function About() {
   return (
     <>
-      <Head>
-        <title>About Me | Data Analyst Portfolio</title>
-      </Head>
+    
       <main className="bg-gray-900 text-white min-h-screen px-6 py-12 font-mono">
         <div className="max-w-4xl mx-auto">
-          {/* Hero Intro */}
-          <section className="mb-12">
-            <h1 className="text-4xl font-bold mb-4">Hey, I’m [Your Name] 👾</h1>
-            <p className="text-lg leading-relaxed">
-              I’m a web developer turned aspiring data analyst based in NYC. I
-              love finding patterns in chaos, uncovering insights in
-              spreadsheets, and building beautiful, performant web apps. When
-              I’m not coding or analyzing, you’ll find me stargazing 🌌 or
-              mastering my next gaming quest 🎮.
-            </p>
-          </section>
-
-          {/* Quest Log */}
+        
           <section className="mb-12">
             <h2 className="text-3xl font-semibold mb-4">🗺️ Quest Log</h2>
             <ul className="space-y-4 border-l-2 border-blue-400 pl-6">

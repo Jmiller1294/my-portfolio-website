@@ -4,18 +4,12 @@ import Skills from './Skills';
 import Timeline from './Timeline';
 import Projects from './Projects';
 import Contact from './Contact';
-import GamifiedResume from './gamified-resume';
-import About from './About';
-import SkillConstellation from './SkillConstellation';
 
 interface ContentProps {
   triggerRoll: (type: "animate" | "reverse-animate" | "") => void;
 }
 
 const Content: FunctionComponent<ContentProps> = ({ triggerRoll }) => {
-  const [scrollDirection, setScrollDirection] = useState<"up" | "down" | null>(
-    null
-  );
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -51,7 +45,6 @@ const Content: FunctionComponent<ContentProps> = ({ triggerRoll }) => {
         <Projects />
         <Timeline />
         <Contact />
-        <About />
       </div>
     </div>
   );

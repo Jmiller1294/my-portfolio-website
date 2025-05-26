@@ -66,7 +66,7 @@ body {
   color: white;
   font-size: 2rem;
   transform: rotateX(0deg); /* neutral */
-  transition: transform 5s ease-in-out scale(0.5);
+  transition: transform 1.4s ease-in-out scale(0.5);
 }
 
 .box{
@@ -90,19 +90,19 @@ body {
 }
 
 .animate .rolling-box {
-   animation: flip-rolling-box 2s ease-in-out forwards;
+   animation: flip-rolling-box 1.4s ease-in-out forwards;
 }
 
 .animate .box{
- animation: flip-box 2s ease-in-out forwards;
+ animation: flip-box 1.4s ease-in-out forwards;
 }
 
 .reverse-animate .rolling-box{
-  animation: flip-rolling-box-backwards 2s ease-in-out backwards;
+  animation: flip-rolling-box-backwards 1.4s ease-in-out backwards;
 }
 
 .reverse-animate .box{
- animation: flip-box-backwards 2s ease-in-out backwards;
+ animation: flip-box-backwards 1.4s ease-in-out backwards;
 }
 
 @keyframes flip-box {
@@ -159,7 +159,7 @@ body {
   background: #efeee5;
 }
 .rolling-box.fade-in-bg::before {
-  animation: fadeInBg 2s ease-in-out forwards;
+  animation: fadeInBg 1s ease-in-out forwards;
 }
 
 @keyframes fadeInBg {

@@ -63,10 +63,25 @@ const Biography: FunctionComponent<BiographyProps> = ({ triggerRoll }) => {
             </div>
           ) : (
             <div className="flex flex-col h-[93vh] w-full justify-center">
-              <h1 className="text-7xl font-bold">Welcome to my Galaxy!</h1>
-              <p className="text-4xl text-gray-500 font-raleway">
-                You’ve entered my world of data & discovery.
-              </p>
+              <TypeAnimation
+                omitDeletionAnimation={true}
+                sequence={["Welcome to My \n Universe! ", 1000]}
+                wrapper="h1"
+                cursor={true}
+                speed={50}
+                style={{
+                  whiteSpace: "pre-line", // IMPORTANT for line breaks
+                  display: "inline-block",
+                  fontSize: "4.5rem",
+                  fontWeight: "bold",
+                  lineHeight: "1.2",
+                  marginBottom: "10px"
+                }}
+              />
+              <h2 className=" text-4xl font-bold antialiased">
+                <span className="text-teal-300">Data Analyst</span> |{" "}
+                <span className="text-teal-300">Web Developer</span>
+              </h2>
             </div>
           )}
           {/* <TypeAnimation
@@ -81,17 +96,6 @@ const Biography: FunctionComponent<BiographyProps> = ({ triggerRoll }) => {
               fontSize: "3rem",
             }}
           /> */}
-          {/* <h1 className="text-8xl font-bold mb-4 antialiased z-12">
-            Hi, Im{" "}
-            <span className="text-teal-300">
-              {"{"}Justin{"}"}
-            </span>
-          </h1>
-          <h2 className=" text-4xl font-bold mb-4 antialiased">
-            <span className="text-teal-300">Web Developer</span> |{" "}
-            <span className="text-teal-300">Aspiring Data Analyst</span>
-             "Hi, I'm {Justin} \nWeb Developer \nAspiring Data Analyst",
-          </h2> */}
         </div>
       </div>
     </div>

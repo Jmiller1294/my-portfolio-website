@@ -4,14 +4,16 @@ import ForceGraph2D, { ForceGraphMethods } from "react-force-graph-2d";
 
 const data = {
   nodes: [
-    { id: "Python" },
-    { id: "Pandas" },
-    { id: "SQL" },
-    { id: "Tableau" },
-    { id: "React" },
-    { id: "Next.js" },
-    { id: "Jupyter" },
-    { id: "Data Visualization" },
+    { id: "Python", x: 0, y: 0 },
+    { id: "Pandas", x: 100, y: 50 },
+    { id: "SQL", x: -100, y: 60 },
+    { id: "Tableau", x: -150, y: 150 },
+    { id: "Excel", x: -150, y: 150 },
+    { id: "JavaScript", x: 150, y: -50 },
+    { id: "React", x: 150, y: -50 },
+    { id: "Next.js", x: 180, y: 100 },
+    { id: "Jupyter", x: 0, y: 150 },
+    { id: "Data Visualization", x: 50, y: 200 },
   ],
   links: [
     { source: "Python", target: "Pandas" },
@@ -31,7 +33,7 @@ const stars = Array.from({ length: starCount }, () => ({
 }));
 
 export default function SkillConstellation() {
-  const fgRef = useRef<ForceGraphMethods>();
+  const fgRef = useRef<ForceGraphMethods>(undefined);
   const [dimensions, setDimensions] = useState({
     width: typeof window !== "undefined" ? window.innerWidth : 800,
     height: typeof window !== "undefined" ? window.innerHeight : 600,
