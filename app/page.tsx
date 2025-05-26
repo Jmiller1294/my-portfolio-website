@@ -13,26 +13,13 @@ export default function Home() {
   const [animationType, setAnimationType] = useState<string>("");
   const [initialRender, setInitialrender] = useState<boolean>(true);
 
-  const triggerRoll = (animation: string) => {
-      
-      triggerRoll();
-    }
-    else{
-      triggerRoll();
-    }
+  const triggerRoll = (type: string) => {
+      console.log("triggerRoll called with animation:", type);
+    
+      setAnimationType(type);
+   
   };
-
-  const getAnimation = () => {
-    if(animationType === 'forwards') {
-      return "animate";
-    }
-    else if(animationType === 'backwards') {
-      return "reverse-animate";
-    }
-    else {
-      return "";
-    }
-  }
+ 
 
   return (
     <div className="h-auto w-full relative font-[family-name:var(--font-geist-sans)]">
@@ -77,7 +64,7 @@ export default function Home() {
       </nav>
       <main className="flex flex-col h-auto w-full">
         <div
-          className={`fullscreen ${getAnimation()
+          className={`fullscreen ${animationType
           }`}
         >
           <Biography triggerRoll={triggerRoll} />

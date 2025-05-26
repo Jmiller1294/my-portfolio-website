@@ -2,7 +2,9 @@
 import { FunctionComponent, useEffect, useRef, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 
-interface BiographyProps {}
+interface BiographyProps {
+  triggerRoll: (type: "animate" | "reverse-animate" | "") => void;
+}
 
 const Biography: FunctionComponent<BiographyProps> = ({ triggerRoll }) => {
   const [fadeIn, setFadeIn] = useState(false);
@@ -19,10 +21,11 @@ const Biography: FunctionComponent<BiographyProps> = ({ triggerRoll }) => {
 
     const handleScroll = () => {
       const currentScrollTop = scrollEl.scrollTop;
+      console.log("Current Scroll Top:", currentScrollTop);
 
       if (currentScrollTop > lastScrollTop) {
         setFadeIn(true);
-        triggerRoll();
+        triggerRoll("animate");
         setScrollDirection("down");
       } else if (currentScrollTop < lastScrollTop) {
         setScrollDirection("up");
@@ -59,9 +62,9 @@ const Biography: FunctionComponent<BiographyProps> = ({ triggerRoll }) => {
               </p>
             </div>
           ) : (
-            <div className="flex flex-col h-[91vh] w-full justify-center">
-              <h1 className="text-7xl font-bold">🎉 Welcome to the Galaxy!</h1>
-              <p className="text-4xl text-gray-500">
+            <div className="flex flex-col h-[93vh] w-full justify-center">
+              <h1 className="text-7xl font-bold">Welcome to my Galaxy!</h1>
+              <p className="text-4xl text-gray-500 font-raleway">
                 You’ve entered my world of data & discovery.
               </p>
             </div>

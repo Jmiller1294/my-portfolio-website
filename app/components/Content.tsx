@@ -6,9 +6,10 @@ import Projects from './Projects';
 import Contact from './Contact';
 import GamifiedResume from './gamified-resume';
 import About from './About';
+import SkillConstellation from './SkillConstellation';
 
 interface ContentProps {
-
+  triggerRoll: (type: "animate" | "reverse-animate" | "") => void;
 }
 
 const Content: FunctionComponent<ContentProps> = ({ triggerRoll }) => {
@@ -26,7 +27,7 @@ const Content: FunctionComponent<ContentProps> = ({ triggerRoll }) => {
       const currentScrollTop = scrollEl.scrollTop;
       console.log(currentScrollTop);
 
-      if(currentScrollTop === 0) triggerRoll();
+      if(currentScrollTop === 0) triggerRoll("reverse-animate");
 
       // if (currentScrollTop > lastScrollTop) {
       //   triggerRoll();
@@ -50,7 +51,6 @@ const Content: FunctionComponent<ContentProps> = ({ triggerRoll }) => {
         <Projects />
         <Timeline />
         <Contact />
-        <GamifiedResume />
         <About />
       </div>
     </div>
