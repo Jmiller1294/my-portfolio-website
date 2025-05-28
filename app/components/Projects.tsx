@@ -1,23 +1,41 @@
 import { FunctionComponent } from "react";
+import ProjectCard from "./ProjectCard";
 
 interface ProjectsProps {
     
 }
  
 const Projects: FunctionComponent<ProjectsProps> = () => {
-    return ( 
-        <div className="h-svh w-full flex flex-col items-center p-4 grey text-black">
-            <h1 className="text-3xl font-bold">Projects</h1>
-            <div className="bg-black h-1 w-10 m-2">&nbsp;</div>
-            <p>
-                Here are some of the projects I have worked on:
-            </p>
-            <ul className="list-disc list-inside">
-                <li>Project 1: A web application built with React and Node.js</li>
-                <li>Project 2: A mobile application built with React Native</li>
-                <li>Project 3: An open source library for data visualization</li>
-            </ul>
+    const projects = [
+      {
+        title: "Galaxy Sales Dashboard",
+        description:
+          "Analyzed sales from interstellar markets using SQL and Tableau.",
+      },
+      {
+        title: "Black Hole Forecasting",
+        description:
+          "Used Python to model black hole growth patterns with time series.",
+      },
+      {
+        title: "Alien Census Data",
+        description:
+          "Cleaned and visualized alien population data using Pandas.",
+      },
+    ];
+
+    return (
+      <div className="min-h-screen bg-black px-6 py-16">
+        <h2 className="text-white text-4xl font-bold text-center">
+          🚀 Projects in Orbit
+        </h2>
+        <div className="bg-white h-1 w-10 m-2 mb-10 mr-auto ml-auto">&nbsp;</div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <ProjectCard key={index} {...project} />
+          ))}
         </div>
+      </div>
     );
 }
  

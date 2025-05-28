@@ -36,7 +36,23 @@ const Content: FunctionComponent<ContentProps> = ({ triggerRoll }) => {
     scrollEl.addEventListener("scroll", handleScroll);
 
     return () => scrollEl.removeEventListener("scroll", handleScroll);
+    
   }, [lastScrollTop]);
+
+  useEffect(() => {
+    //  const scrollEl = scrollRef.current;
+    //  if (!scrollEl) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      console.log("delta:", e.deltaY, scrollRef.current?.scrollTop);
+      if (e.deltaY < -30 && scrollRef.current?.scrollTop === 0) {
+        triggerRoll("reverse-animate");
+      }
+    };
+
+    window.addEventListener("wheel", handleWheel);
+    return () => window.removeEventListener("wheel", handleWheel);
+  }, []);
 
   return (
     <div className="bg-primary box">

@@ -49,6 +49,7 @@ export default function SkillConstellation() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  
 
   return (
     <div className="h-svh w-full bg-black rounded overflow-x-hidden">

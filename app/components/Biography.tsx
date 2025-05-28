@@ -21,7 +21,6 @@ const Biography: FunctionComponent<BiographyProps> = ({ triggerRoll }) => {
 
     const handleScroll = () => {
       const currentScrollTop = scrollEl.scrollTop;
-      console.log("Current Scroll Top:", currentScrollTop);
 
       if (currentScrollTop > lastScrollTop) {
         setFadeIn(true);
@@ -47,22 +46,31 @@ const Biography: FunctionComponent<BiographyProps> = ({ triggerRoll }) => {
     return () => clearTimeout(timer); // cleanup if component unmounts
   }, []);
 
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      if (e.deltaY > 30) {
+        setFadeIn(true);
+        triggerRoll("animate");
+      }
+    };
+
+    window.addEventListener("wheel", handleWheel);
+    return () => window.removeEventListener("wheel", handleWheel);
+  }, []);
+
   return (
-    <div
-      className={`rolling-box absolute z-10 ${fadeIn ? "fade-in-bg" : ""}`}
-      onClick={() => setFadeIn(true)}
-    >
-      <div className="rolling-box-content scrollbar-hide" ref={scrollRef}>
+    <div className={`rolling-box absolute z-10 ${fadeIn ? "fade-in-bg" : ""}`}>
+      <div className="rolling-box-content scrollbar-hide h-svh" ref={scrollRef}>
         <div className="text-center p-8">
           {!showAlt ? (
-            <div className="flex flex-col h-[90vh] w-full justify-center">
+            <div className="flex flex-col h-svh w-swv justify-center">
               <h1 className="text-7xl font-bold">🚀 Launching...</h1>
-              <p className="text-4xl text-gray-500">
+              <p className="text-4xl text-gray-500 mb-40">
                 Hang tight, data loading...
               </p>
             </div>
           ) : (
-            <div className="flex flex-col h-[93vh] w-full justify-center">
+            <div className="flex flex-col h-svh w-svw justify-center">
               <TypeAnimation
                 omitDeletionAnimation={true}
                 sequence={["Welcome to My \n Universe! ", 1000]}
@@ -75,10 +83,12 @@ const Biography: FunctionComponent<BiographyProps> = ({ triggerRoll }) => {
                   fontSize: "4.5rem",
                   fontWeight: "bold",
                   lineHeight: "1.2",
-                  marginBottom: "10px"
+                  marginBottom: "10px",
                 }}
               />
-              <h2 className=" text-4xl font-bold antialiased">
+              <h2
+                className=" text-4xl font-bold antialiased mb-40"
+              >
                 <span className="text-teal-300">Data Analyst</span> |{" "}
                 <span className="text-teal-300">Web Developer</span>
               </h2>
