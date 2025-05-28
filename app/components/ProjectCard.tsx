@@ -9,12 +9,13 @@ export default function ProjectCard({
   return (
     <div
       className="
-        h-96 w-full float bg-gray-800 
+        h-fit w-full float bg-gray-800 
         bg-opacity-40 backdrop-blur-sm text-white 
         rounded-xl shadow-lg transition-transform 
         duration-300 hover:shadow-lime-950 
         hover:cursor-pointer
         border-white/10 text-center
+        pb-4
       "
     >
       <Image
@@ -25,7 +26,7 @@ export default function ProjectCard({
         alt="project"
       />
       <h3 className="text-xl pr-2 pl-2 font-semibold">{title}</h3>
-      <p className="h-1/6 p-2 text-sm mt-2 text-gray-300">{description}</p>
+      <p className="h-1/3 p-2 text-sm mt-2 text-gray-300">{description}</p>
       <div className="w-full h-1/6">
         <button className="h-full w-3/4 rounded-xl bg-teal-400/10">
           <span className=" text-teal-300">Learn More</span>

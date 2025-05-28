@@ -53,9 +53,6 @@ export default function SkillConstellation() {
 
   return (
     <div className="h-svh w-full bg-black rounded overflow-x-hidden">
-      <h2 className="absolute top-16 left-1/2 text-white text-3xl font-bold z-10">
-        Skills
-      </h2>
       <ForceGraph2D
         width={dimensions.width}
         height={dimensions.height}

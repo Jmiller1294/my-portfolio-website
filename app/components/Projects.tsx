@@ -26,11 +26,11 @@ const Projects: FunctionComponent<ProjectsProps> = () => {
 
     return (
       <div className="min-h-screen bg-black px-6 py-16">
-        <h2 className="text-white text-4xl font-bold text-center">
-          🚀 Projects in Orbit
+        <h2 className="text-white text-4xl font-bold text-center mb-4">
+            Projects
         </h2>
         <div className="bg-white h-1 w-10 m-2 mb-10 mr-auto ml-auto">&nbsp;</div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
