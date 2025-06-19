@@ -4,6 +4,7 @@ import Skills from './Skills';
 import Timeline from './Timeline';
 import Projects from './Projects';
 import Contact from './Contact';
+import Footer from './Footer';
 
 interface ContentProps {
   triggerRoll: (type: "animate" | "reverse-animate" | "") => void;

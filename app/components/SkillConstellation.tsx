@@ -6,13 +6,11 @@ const data = {
   nodes: [
     { id: "Python", x: 0, y: 0 },
     { id: "Pandas", x: 100, y: 50 },
-    { id: "SQL", x: -100, y: 60 },
-    { id: "Tableau", x: -150, y: 150 },
-    { id: "Excel", x: -150, y: 150 },
-    { id: "JavaScript", x: 150, y: -50 },
+    { id: "SQL", x: -100, y: 130 },
+    { id: "Tableau", x: -100, y: 130 },
     { id: "React", x: 150, y: -50 },
-    { id: "Next.js", x: 180, y: 100 },
-    { id: "Jupyter", x: 0, y: 150 },
+    { id: "Next.js", x: 100, y: 100 },
+    { id: "Jupyter", x: -50, y: 150 },
     { id: "Data Visualization", x: 50, y: 200 },
   ],
   links: [

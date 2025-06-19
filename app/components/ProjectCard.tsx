@@ -28,8 +28,8 @@ export default function ProjectCard({
       <h3 className="text-xl pr-2 pl-2 font-semibold">{title}</h3>
       <p className="h-1/3 p-2 text-sm mt-2 text-gray-300">{description}</p>
       <div className="w-full h-1/6">
-        <button className="h-full w-3/4 rounded-xl bg-teal-400/10">
-          <span className=" text-teal-300">Learn More</span>
+        <button className="bg-teal-300 hover:bg-teal-400 text-black font-bold py-2 px-6 rounded-md shadow-[0_0_10px_#00f2ff] transition duration-300">
+          <span className="">Learn More</span>
         </button>
       </div>
     </div>

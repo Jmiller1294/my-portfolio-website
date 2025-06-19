@@ -25,14 +25,13 @@ const ContactForm = () => {
         📡 Contact Me
       </h2>
       <p className="text-sm md:text-base text-gray-400 mb-10 text-center max-w-xl">
-        Send me a transmission from your sector — I'll get back to you faster
-        than the speed of light!
+        Send me a message — I'll get back to you faster than the speed of light!
       </p>
 
       {!submitted ? (
         <form
           onSubmit={handleSubmit}
-          className="w-full max-w-2xl space-y-6 bg-black/30 backdrop-blur-sm p-8 rounded-2xl shadow-[0_0_25px_#00f2ff40] border border-teal-500/20"
+          className="w-full max-w-2xl space-y-6 bg-black/30 backdrop-blur-sm p-8 rounded-2xl shadow-[0_0_25px_#00f2ff40] border border-teal-500/20 flex flex-col items-center justify-center"
         >
           <div>
             <label

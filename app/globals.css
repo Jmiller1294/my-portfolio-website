@@ -4,13 +4,13 @@
 
 
 :root {
-  --background: #ffffff;
+  --background: #00000;
   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -23,7 +23,7 @@ body {
 }
 
 .fullscreen {
-  background: grey;
+  background: #000000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,7 +158,7 @@ body {
   background: #efeee5;
 }
 .rolling-box.fade-in-bg::before {
-  animation: fadeInBg 1s ease-in-out forwards;
+  animation: fadeInBg 1.4s ease-in-out forwards;
 }
 
 @keyframes fadeInBg {
@@ -188,4 +188,8 @@ body {
 
 .shadow-glow {
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.4), 0 0 25px rgba(0, 255, 255, 0.2);
+}
+
+.active-link {
+  border-bottom: 2px solid #e2e8f0;
 }
