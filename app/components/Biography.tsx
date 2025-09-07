@@ -88,12 +88,11 @@ const Biography: FunctionComponent<BiographyProps> = ({ triggerRoll }) => {
                 }}
               />
               <h2 className=" text-4xl font-bold antialiased">
-                <span className="text-teal-300">Web Developer</span> |{" "}
                 <span className="text-teal-300">Data Analyst</span>
               </h2>
               <div className="flex items-center justify-center gap-6 mt-4 text-xl text-white">
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/Jmiller1294"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -103,7 +102,7 @@ const Biography: FunctionComponent<BiographyProps> = ({ triggerRoll }) => {
                   />
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourprofile"
+                  href="https://www.linkedin.com/in/justinmiller92"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -112,7 +111,7 @@ const Biography: FunctionComponent<BiographyProps> = ({ triggerRoll }) => {
                     className="hover:text-teal-400 transition duration-300"
                   />
                 </a>
-                <a href="">
+                <a href="mailto:justin.alx.miller@gmail.com">
                   <FaEnvelope
                     size={30}
                     className="hover:text-teal-400 transition duration-300"

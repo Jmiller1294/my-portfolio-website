@@ -9,9 +9,9 @@ const Navbar = () => {
   return (
     <nav className="flex flex-row h-auto w-full items-center text-white absolute top-0 z-50 p-6">
       <div>
-        <h1 className="font-extrabold text-slate-200 text-2xl relative left-0">
+        <Link href="/"className="font-extrabold text-slate-200 text-2xl relative left-0">
           Justin Miller
-        </h1>
+        </Link>
       </div>
       <div className="flex flex-row gap-4 ml-auto">
         <Link

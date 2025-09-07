@@ -5,20 +5,23 @@ import ForceGraph2D, { ForceGraphMethods } from "react-force-graph-2d";
 const data = {
   nodes: [
     { id: "Python", x: 0, y: 0 },
-    { id: "Pandas", x: 100, y: 50 },
+    { id: "Excel(Pivot Tables, VLookUp)", x: 10, y: 80 },
+    { id: "Google/MS Office Suite", x: 10, y: 60 },
     { id: "SQL", x: -100, y: 130 },
-    { id: "Tableau", x: -100, y: 130 },
-    { id: "React", x: 150, y: -50 },
+    { id: "Databases", x: -80, y: 150 },
+    { id: "Tableau", x: -100, y: 20 },
+    { id: "CRMs", x: 70, y: -40 },
     { id: "Next.js", x: 100, y: 100 },
-    { id: "Jupyter", x: -50, y: 150 },
-    { id: "Data Visualization", x: 50, y: 200 },
+    { id: "Windows/MacOS", x: -50, y: 150 },
+    { id: "PowerBI", x: 60, y: 100 },
   ],
   links: [
-    { source: "Python", target: "Pandas" },
-    { source: "Python", target: "Jupyter" },
-    { source: "SQL", target: "Tableau" },
-    { source: "React", target: "Next.js" },
-    { source: "Python", target: "Data Visualization" },
+    { source: "Python", target: "SQL" },
+    { source: "Python", target: "Next.js" },
+    { source: "Python", target: "Databases" },
+    { source: "Excel(Pivot Tables, VLookUp)", target: "Google/MS Office Suite" },
+    { source: "Tableau", target: "PowerBI" },
+    { source: "Windows/MacOS", target: "CRMs" },
   ],
 };
 
